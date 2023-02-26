@@ -163,7 +163,7 @@ class Loggers():
             #    pass  # ClearML saves these images automatically using hooks
             if self.comet_logger:
                 self.comet_logger.on_pretrain_routine_end(paths)
-
+    # batch_end 时候的操作
     def on_train_batch_end(self, model, ni, imgs, targets, paths, vals):
         log_dict = dict(zip(self.keys[:3], vals))
         # Callback runs on train batch end
